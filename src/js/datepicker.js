@@ -1,4 +1,4 @@
-;(function () {
+;(function ($) {
     var VERSION = '2.2.4',
         pluginName = 'datepicker',
         autoInitSelector = '.datepicker-here',
@@ -1491,4 +1491,4 @@
         $(autoInitSelector).datepicker();
     })
 
-})();
+})(jQuery);

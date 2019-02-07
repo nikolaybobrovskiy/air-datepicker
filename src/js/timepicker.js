@@ -1,4 +1,4 @@
-;(function () {
+;(function ($) {
     var template = '<div class="datepicker--time">' +
         '<div class="datepicker--time-current">' +
         '   <span class="datepicker--time-current-hours">#{hourVisible}</span>' +
@@ -280,4 +280,4 @@
             this.d.timepickerIsActive = false;
         }
     };
-})();
+})(jQuery);
