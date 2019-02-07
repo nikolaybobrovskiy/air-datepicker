@@ -285,10 +285,11 @@
             this.$nav = $('.datepicker--nav', this.$datepicker);
         },
 
-        _triggerOnChange: function () {
+        _triggerOnChange: function (onChangeOpts) {
+            onChangeOpts = onChangeOpts || {};
             if (!this.selectedDates.length) {
                 // Prevent from triggering multiple onSelect callback with same argument (empty string) in IE10-11
-                if (this._prevOnSelectValue === '') return;
+                if (this._prevOnSelectValue === '' && !onChangeOpts.clear) return;
                 this._prevOnSelectValue = '';
                 return this.opts.onSelect('', '', this);
             }
@@ -595,7 +596,7 @@
             this.views[this.currentView]._render();
             this._setInputValue();
             if (this.opts.onSelect) {
-                this._triggerOnChange()
+                this._triggerOnChange({clear: true})
             }
         },
 
